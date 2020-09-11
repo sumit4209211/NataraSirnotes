@@ -1,0 +1,151 @@
+Traditional for loop :
+---------------------
+The traditional for loop was introduced in the first release of the Java language.
+
+ Complex code for a simple task:
+--------------------------------
+
+ System.out.print("Get set...");
+   for(int i = 1; i < 4; i++) {
+     System.out.print(i + "...");
+   }
+
+ we start the loop index variable i at 1 and limit it to a value of less than 4. 
+Note that the for loop requires us to tell the loop to increment. 
+In this case we’ve also elected a pre- versus post-increment.
+
+Iterating over a list in Java(using for loop):
+---------------------------------------------
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class App {
+
+  public static void main(String args[]) {
+
+    List<String> gadgets = new ArrayList<>(
+        Arrays.asList("Apple watch", "Samsung Gear 3", "iPhone 7+"));
+
+    // iterating over List using for loop
+
+    System.out.println("iterating over a List using for loop in Java:");
+    for (int i = 0; i < gadgets.size(); i++) {
+      System.out.println(gadgets.get(i));
+    }
+}
+}
+
+pros:
+-----
+1->The traditional for loop uses a counter and allows you to iterate until the last element is reached
+ i.e. counter is equal to the length of the array.
+2->for loop, i which we defined is a single variable that is mutated through each iteration of the loop. 
+3->for loop provide access to the index, hence allows you to replace any element in the array.
+
+cons:
+-----
+1->The for loop is quite capable, but it has too many moving parts. 
+2->In order to loop over a container we must implement the Iterable interface, both array and collection implement
+but there is no such requirement for traditional for loop.
+
+Enhanced for loop:
+------------------
+ Enhanced for loop was added on Java 5, hence it's only available from JDK 5 onward.
+
+Iterating over a list in Java(Enhanced for loop):
+-------------------------------------------------
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class App {
+
+  public static void main(String args[]) {
+
+    List<String> gadgets = new ArrayList<>(
+        Arrays.asList("Apple watch", "Samsung Gear 3", "iPhone 7+"));
+
+    // iterating over List using enhanced for loop
+    System.out.println("iterating over a List using enhanced for loop in Java:");
+    for (String gadget : gadgets) {
+      System.out.println(gadget);
+    }
+  }
+
+}
+
+pros:
+-----
+
+1)In order to loop over a container using enhanced for loop, 
+your container must implement the Iterable interface, both array and collection implement by using Enhanced for loop. 
+
+2) The enhanced for loop executes in sequence. i.e  the counter is always increased by one, 
+where as in for loop you can change the step as per your wish e.g doing something like i=i+2; to loop every second element in an array or collection.
+
+3) The enhanced for loop can only iterate in incremental order. we cannot configure it to go in decrement. 
+i.e in for loop we can write i-- in step counter to go backward.
+
+4)If we have a requirement that array should be displayed sequence in the forward direction and
+ we also don't want to change the real value in the array accidently or intentionally by any user etc then we should use the enhanced for loop.
+
+cons:
+-----
+1->To remove elements as you traverse collections.
+2->To modify the current slot in an array or list.
+3->To iterate over multiple collections or arrays.
+
+for each loop:
+---------------
+ since java 8 onwards we are using for each loop. It is used to iterate all elements of an array or Collection.
+
+for-each loop which iterates the collection :
+----------------------------------------------
+public class ForEachLoop
+{
+    public static void main(String[] args)
+    {
+        //An ArrayList of strings
+        ArrayList<String> list = new ArrayList<String>();
+ 
+        //Adding elements to ArrayList
+        list.add("First");
+        list.add("Second");
+        list.add("Third");
+        list.add("Fourth");
+ 
+        //iterating every element of list using for-each loop
+        for (String s : list)
+        {
+            System.out.println(s);
+        }
+    }
+}
+
+its working:
+------------
+The iteration variable in the for-each loop receives every element of an array or collection one at a time starting from first element to last element. 
+i.e In the first iteration, it gets the first element. In the second iteration,
+it gets the second element and so on. Thus it iterates all elements of an array or the collection.
+ The type of iteration variable must be compatible with the type of array or collection.
+
+pros:
+-----
+1->You need not to specify the initialization, condition and increment or decrement as you specify in the normal for loop.
+2->It increases the readability of the code.
+
+cons:
+-----
+You can’t iterate only few elements of an array or collection using for-each loop.
+
+
+
+
+
+
+
+
+
+
+

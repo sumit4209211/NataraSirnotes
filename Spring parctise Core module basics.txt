@@ -1,0 +1,156 @@
+Defination of Spring FrameWork:
+-------------------------------
+
+       Spring Framework is open source,lightweight,loosly coupled,aspect oriented,Dependence injection based java application framework to develop various 
+types of java application.
+
+
+Spring Core Module:
+------------------
+       
+             Spring core module is base module for all other modules it gives us two container to manage spring bean life cycle and Dependency injection
+between classes.
+
+            The Two Container are
+            ---------------------
+                       1.BeanFactory(i) legacy
+                       2.ApplicationContextFactory(i) implementation interface 
+
+Dependency Management Consist of two type:
+------------------------------------------
+                 1.Dependency lookup:
+                   ------------------
+                          In this type the target component have some logic to serach and get the dependent class object.
+                                for Example: Perform Dependency lookup and getting data source object from jndi registry.
+     
+
+                 2. Depnedency Injection/(IOC Container(Inversion of Control)):
+                    ----------------------------------------------------------- 
+                    The underlaying spring cotainer or ioc container will dynamically assign dependent bean component to target bean 
+                    component is known as dependency injcetion.               
+                                  
+                          They are 5 way to Perform the Dependency Injection:
+                          ---------------------------------------------------
+                            1.Setter injection
+                            2.Constructor Injection
+                            3.Interface/Aware injection
+                            4.Lookup method injection
+                            5.Method Injection                
+                                    
+
+Setter Injection:
+-----------------
+   IOC container will inject the dependent bean object to traget bean object by calling target bean of setter method.
+
+Constructor Injection:
+----------------------
+   IOC container will inject the dependent bean object to traget bean object by calling target bean of Constructor.
+
+The above two Dependency injection are mostely used in our application
+
+For class it dynamically create object we dont need to create object Explicitly.in spring terminology it is "bean" which internally creates in container.
+and the dependencies are variables in the class
+ 
+     Dependencies in form of literals,objective,collection.
+
+Resource res=null;
+res=new FileResourceSystem("xxx.xml");//these are present in pre defined package (org.springframework.core.io package)
+-----------------------------------------------
+ It locates and loads the spring  bean configuration file  from spectified  location of file System.
+
+BeanFactory factory=null;
+factory=new XmlBeanFactory(res);//Here our container object is created BeanFactory is interface and implementaion class is XmlBeanFactory 
+                                 and it is depricated and present in pre defined package ( org.springframework.beans.factory.BeanFactory)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+  Based on given res object to the container it reads and checks the confing file and checks is it wellform and valid are not
+            1. If its satiesfied with spring given syntax rule the it is well formed.
+            2. If its satisfied with XSD and DTD then it is valid
+   then it creates the logical container in jvm memory and uses SaxParser to xml file data to maintain the in memeory meta-data.
+
+           Now it loads the classes and create object and maintain all the dependencies
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+       For Example: My calss name is Tek in the class i have one variable called name with setter injection
+
+                           org.tek;
+                           public class Tek{  
+                            
+                              private String name;  //Here dependency in form of literal.
+                                
+                                   //Setter method
+                                public void setName(String name){
+                                      this.name=name;
+                                 }
+
+                            public void display(){
+                                 System.out.println("Your Name is "+name);
+                             }
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                          org.test.app;
+                           
+                            public class TekApp{
+
+                                public static void main(String[] args){
+
+                                      Resourse res=null;
+                                      BeanFactory fac=null;
+
+                                      //locates and load the spring bean cnfig file from specified location of file System
+                                      res=new FileSystemResourcePath("src/main/java/org/config/applicationContext.xml");
+
+                                      /*on given res object to container read the file and checks wheather the file is wellform and valid or not 
+                                         after completing wellform and valid it load the developer created calss and create the object and manage the 
+                                           dependencies */
+                                          
+		                           fac=new XmlBeanFactory(res);
+                                      //Here we need to type cast bcoz getBean(-) method return the object which cannot cast to Wish
+                                       Tek tek=(Tek)fac.getBean("tek");
+                                           tek.display();
+                                                       
+                                                     //or mostly used Container in application
+                                     AppliactionContext ctx=new ClassPathXmlApplicationContext("org/config/applicationContext.xml");
+                                     Tek tek=(Tek)ctx.getBean("tek");
+                                        //or if you dont want to do type then go for this approch below code line
+                                          //Tek tek=ctx.getBean("tek",Tek.class);
+                                         tek.display();
+      
+                                }
+
+                       }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------        
+   org.config under this package our config file is their applicationContext.xml
+ 
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+     <bean id="tek" class="org.tek.Tek" >
+      <property name="name" value="${tek.name}"></property>
+      </bean>
+     </beans>
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+now run the application out will be Your name is TekBrain7
+
+If you dont want hard code you name in config file the go for propeties file
+
+ internally code should be like this
+---------------------------------------------------------------------------------------------------------------------------------------------
+       Tek tek=(Tek) Class.forName(org.tek.Tek).newInstance();//throws the exception
+          tek.setName("Amjad");
+        
+-----------------------------------------------------------------------------------------------------------------------------------------------
+If you dont want to hard code your Name in config file then go for property file
+
+you need to place  below tag to loacte the propertie file
+<context:property-placeholder location="org/property/tek.properties"/>
+ 
+     <bean id="tek" class="org.tek.Tek" >
+      <property name="name" value="${tek.name}"></property>
+      </bean>
+org.property is package name under this property file is placed
+tek.properties
+tek.name=TekBrains7
+most of the time properies file is used for jdbc pooled connection properties like  url,max_time  etc...

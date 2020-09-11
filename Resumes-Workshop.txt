@@ -1,0 +1,81 @@
+=>No fixed format for resume..
+=> No.of pages  ( Doc should be short and sweet document)   (1 side printing)
+          fresher  -> 2-3 pages (max)        
+	  1 year of exprience -> 2-3 pages (max)
+	  2 years of exprience -> 3-4 pages (max)
+	  3/4/5 years of exprience -> 4-5 pages (max)
+=> Professional fonts     Arial, verdana , Cosolas, TimeNewRoman,calibri 
+=> Font sizes :: as required     (12-16  :: normal text)
+                                                      (14-18 (B) ::  side headings)
+						      (20-24 (b)  :: main heading)
+=>No border 
+=> Justify the paragraphs
+=> Uniform Look Through out the document..
+=>No Spell mistakes  and No Gramatical mistakes
+=>As as fresher  ::  CV  (More academic details)
+=>As Exepreince :: Resume or CV (More Proffession Information)
+=> name ::  <firstname>  <surname>
+=>Write java certification exams after joining the company ... when u r in freepool (bench)
+       https://en.wikipedia.org/wiki/Oracle_Certification_Program   (     Certification exams list )
+       https://www.brainbench.com/xml/bb/common/testcenter/freetests.xml  (Free Certifications)
+       http://www.dump4exam.com/ocjp.html  (for ocjp dumps)
+=> Java fresher ::    Amcat, Elitmus , hackerrank ,   java cerfications logos  (0 or more)
+=> Java experience ::       java cerfications logos + Scrum(agile) logos  (0 or more)
+----------------------------------------------------------------------------------------------------------------------------------------------
+ Down the line , after 5 years where want see u r self?
+    ans1) Now i  am java developer.. but i want to beome full stack developer 
+    ans2) Want to become java subject expert
+    ans3)  want to become  key player in the Organization
+
+ Why  should  i hire u ?    
+   Ans) In a given  siutation, i can put my best efforts to work organization which helps me and 
+         organization to grow  using my technical, interpersonal and leadership qualities
+What is u r weakness?
+    Ans1) if i struckup somewhere in the work.. i will spend more time for perfecation with out worrying about
+              deadlines
+    Ans2)  Being from village , my english vocabulary is not so good ,i want to improve
+    Ans3)  Lazy to get up in the mornigs.. but i want to resolve it to utilize day time more effectively..
+    Ans4)  I am bit sensitive or  overreacting person .. I want to make my self strong and more workholic person 
+
+    Q)why  there is  downfall in u r academic percentages?
+     Ans) intially , i used mug up the answers... later i started understainding and analyzing the subject.. which
+     effected my academic percentags...
+
+      Q)why  there is  growth in u r academic percentages?
+
+      Q) Why did u take much time to comple u r graduation?
+             a) Financial problem .. done job for few years to support family
+	     b) Main Family member expired --Taken care of family business
+
+      Q)  Why there gaps in ur acedemics   ?
+               Above reasons +
+	                 Social work  (or) spiritual life (or)  Entrace exam preparation   (or) govt job prepareation
+
+       Q) why are coming to IT industry as non-IT graduate?
+                Ans1) From the childhood i am intrested in computers.. but i could not engg in that stream.. but
+		          from the beging i was learing IT related technologies.. So i am pursuing  IT career.
+             Ans2)  People misguided me  while choosisng courses of engg becoz of IT sector recision... But i later
+	             realized      IT is feature .. So i am pursuing IT career
+             Ans3) While using mobile Apps like  Flipkart.. i am very impressed .. i felt like entire word in
+	             my pocket.. So i attracted to IT sector
+		     note ::: lastly offcourse .. there are more  openings and packages in IT sector... even quality life..
+	        
+		natarazjavaarena --->FB group..
+
+			   
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+	  

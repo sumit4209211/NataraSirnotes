@@ -1,0 +1,18 @@
+==============WildFly Server Installation Process=========================
+
+step-1:- Extract the Wildfly server jar.
+
+step-2:- Open the Command prompt, go to bin folder location and type add-user 
+	 Exp:-F:\WildFlyServer17.0.1\wildfly-17.0.1.Final\bin>add-user
+
+step-3:- Go to Browser type url(http://localhost:7070/), bydefault it's portno is 8080, some times this portno 
+ 	 busy so to change portno go to standalone.xml(F:\WildFlyServer17.0.1\wildfly-17.0.1.Final\standalone \configuration) file and change <socket-binding name="http" port="${jboss.http.port:7070}"/>..
+
+step-4:- Open the Command prompt, go to bin folder location and type "standalone" command for start the server.
+	 Exp:-F:\WildFlyServer17.0.1\wildfly-17.0.1.Final\bin>standalone.bat
+
+
+step-5:- Go to Adminconsole Of wildfly, login by giving your credentials(username,password).
+
+step-6:- Then follow this url to add datasource and jdbcDriver to wildfly
+	https://tomylab.wordpress.com/2016/07/24/how-to-add-a-datasource-to-wildfly/	 
